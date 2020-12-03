@@ -1,10 +1,10 @@
 <?php 
-
+namespace app\core
 /**  
  * Class Application 
  * 
  * @author SkSaju <sksaaju@gmail.com>
- * @package ${NAMESPACE}
+ * @package app\core
  */
 
 class Application
@@ -12,6 +12,6 @@ class Application
     public Router $router;
     public function __construct()
     {
-        
+        $this->router = new Router();
     }
 }

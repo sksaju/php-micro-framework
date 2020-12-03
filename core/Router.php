@@ -1,10 +1,10 @@
 <?php 
-
+namespace app\core
 /**  
  * Class Router 
  * 
  * @author SkSaju <sksaaju@gmail.com>
- * @package ${NAMESPACE}
+ * @package app\core
  */
 
 class Router

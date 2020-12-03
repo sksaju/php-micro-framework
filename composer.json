@@ -1,0 +1,15 @@
+{
+    "name": "sksaju/php-micro-framework",
+    "authors": [
+        {
+            "name": "sksaju",
+            "email": "sksaaju@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
