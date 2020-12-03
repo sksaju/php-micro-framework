@@ -1,5 +1,7 @@
 <?php 
-namespace app\core
+
+namespace app\core;
+
 /**  
  * Class Router 
  * 
