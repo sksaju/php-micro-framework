@@ -18,7 +18,7 @@ class Application
     public static Application $app;
 
     /**  
-     * Router constructor.
+     * Application constructor.
      * 
      * @param string $ROOT_DIR
      */
