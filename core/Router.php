@@ -12,16 +12,19 @@ namespace app\core;
 class Router
 {
     public Request $request;
+    public Response $response;
     protected array $routes = [];
 
     /**  
      * Router constructor.
      * 
      * @param \app\core\Request $request
+     * @param \app\core\Response $response
      */
-    public function __construct(\app\core\Request $request)
+    public function __construct(Request $request, Response $response)
     {
         $this->request = $request;
+        $this->response = $response;
     }
 
     public function get($path, $callback)
@@ -36,10 +39,21 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
 
         if ($callback === false) {
-            echo "404 Not Found";
-            exit;
+            $this->response->setStatusCode(404);
+            return 'Not Found';
         }
 
-        echo call_user_func($callback);
+        if (is_string($callback)) {
+            return $this->renderView($callback);
+        }
+
+        return call_user_func($callback);
+    }
+
+    public function renderView($view)
+    {
+        ob_start();
+        include_once Application::$ROOT_DIR."./views/$view.php";
+        return ob_get_clean();
     }
 }
