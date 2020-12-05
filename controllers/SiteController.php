@@ -27,7 +27,7 @@ class SiteController
         return Application::$app->router->renderView('contact');
     }
 
-    public function handContact()
+    public function handleContact()
     {
         return 'handle contact';
     }
