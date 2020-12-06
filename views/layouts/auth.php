@@ -8,20 +8,10 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-        <title>Hello, world!</title>
+        <title>Auth</title>
     </head>
 
     <body>
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-            <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-            <nav class="my-2 my-md-0 mr-md-3">
-                <a class="p-2 text-dark" href="/">Home</a>
-                <a class="p-2 text-dark" href="/contact">Contact</a>
-                <a class="p-2 text-dark" href="/register">Register</a>
-                <a class="btn btn-outline-primary" href="/login">Login</a>
-            </nav>
-        </div>
-
         <div class="container">
             {{content}}
         </div>

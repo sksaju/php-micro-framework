@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+use app\controllers\Controller;
+
 /**  
  * Class Application 
  * 
@@ -16,6 +18,7 @@ class Application
     public Request $request;
     public Response $response;
     public static Application $app;
+    public Controller $controller;
 
     /**  
      * Application constructor.
@@ -34,5 +37,15 @@ class Application
     public function run()
     {
         echo $this->router->resolve();
+    }
+
+    public function getController()
+    {
+        return $this->controller;
+    }
+
+    public function setController(Controller $controller)
+    {
+        $this->controller = $controller;
     }
 }

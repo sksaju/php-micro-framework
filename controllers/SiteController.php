@@ -16,7 +16,7 @@ class SiteController extends Controller
     public function home()
     {
         $params = [
-            'message' => 'Welocome here'
+            'message' => 'PHP MVC Framework'
         ];
 
         return $this->render('home', $params);
@@ -30,6 +30,6 @@ class SiteController extends Controller
     public function handleContact(Request $request)
     {
         $data = $request->body();
-        return 'handle contact';
+        return 'Handle submitted data';
     }
 }
