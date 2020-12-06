@@ -77,7 +77,7 @@ class Router
 
     protected function renderViewOnly($view, $params)
     {
-        foreach($params as $key => $value) {
+        foreach ($params as $key => $value) {
             $$key = $value;
         }
 
