@@ -17,6 +17,9 @@ class Application
     public Router $router;
     public Request $request;
     public Response $response;
+    public Database $db;
+
+
     public static Application $app;
     public Controller $controller;
 
@@ -24,14 +27,17 @@ class Application
      * Application constructor.
      * 
      * @param string $ROOT_DIR
+     * @param array $config
      */
-    public function __construct($ROOT_DIR)
+    public function __construct($ROOT_DIR, $config)
     {
         self::$app = $this;
         self::$ROOT_DIR = $ROOT_DIR;
         $this->request = new Request();
         $this->response = new Response();
         $this->router = new Router($this->request, $this->response);
+
+        $this->db = new Database($config['db']);
     }
 
     public function run()
