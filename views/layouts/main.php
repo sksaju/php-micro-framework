@@ -23,6 +23,16 @@
         </div>
 
         <div class="container">
+            <?php  
+                $flash_message = \app\core\Application::$app->session->getFlash('success');
+                if ($flash_message) : ?>
+                    <div class="alert alert-success">
+                        <?php echo $flash_message; ?>
+                    </div>
+            <?php 
+                endif; 
+            ?>
+
             {{content}}
         </div>
 
