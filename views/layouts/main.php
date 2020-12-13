@@ -1,3 +1,7 @@
+<?php
+    use app\core\Application;
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -17,8 +21,14 @@
             <nav class="my-2 my-md-0 mr-md-3">
                 <a class="p-2 text-dark" href="/">Home</a>
                 <a class="p-2 text-dark" href="/contact">Contact</a>
-                <a class="p-2 text-dark" href="/register">Register</a>
-                <a class="btn btn-outline-primary" href="/login">Login</a>
+                <?php
+                if (Application::isGuest()) { ?>
+                    <a class="p-2 text-dark" href="/register">Register</a>
+                    <a class="btn btn-outline-primary" href="/login">Login</a>
+                <?php } else { ?>
+                    | Welcome, <?php echo Application::$app->user->getDisplayName(); ?>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
+                <?php } ?>
             </nav>
         </div>
 

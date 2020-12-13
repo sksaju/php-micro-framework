@@ -14,11 +14,14 @@ use app\controllers\Controller;
 class Application
 {
     public static string $ROOT_DIR;
+
+    public string $userClass;
     public Router $router;
     public Request $request;
     public Response $response;
     public Session $session;
     public Database $db;
+    public ?UserModel $user;
 
 
     public static Application $app;
@@ -32,6 +35,7 @@ class Application
      */
     public function __construct($ROOT_DIR, $config)
     {
+        $this->userClass = $config['userClass'];
         self::$app = $this;
         self::$ROOT_DIR = $ROOT_DIR;
         $this->request = new Request();
@@ -40,6 +44,19 @@ class Application
         $this->router = new Router($this->request, $this->response);
 
         $this->db = new Database($config['db']);
+
+        $primaryValue = $this->session->get('user');
+        if ($primaryValue) {
+            $primaryKey = $this->userClass::primaryKey();
+            $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
+        } else {
+            $this->user = null;
+        }
+    }
+
+    public static function isGuest()
+    {
+        return !self::$app->user;
     }
 
     public function run()
@@ -55,5 +72,20 @@ class Application
     public function setController(Controller $controller)
     {
         $this->controller = $controller;
+    }
+
+    public function login(UserModel $user)
+    {
+        $this->user = $user;
+        $primaryKey = $user->primaryKey();
+        $primaryValue = $user->{$primaryKey};
+        $this->session->set('user', $primaryValue);
+        return true;
+    }
+
+    public function logout()
+    {
+        $this->user = null;
+        $this->session->remove('user');
     }
 }
