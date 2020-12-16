@@ -1,28 +1,23 @@
 <?php
-    /**
-     * @var $this \app\core\View
-     */
+/**
+ * @var $this \app\core\View
+ */
 
-    $this->title = 'Contact';
+use app\core\form\TextareaField;
+
+$this->title = 'Contact';
 ?>
 
 <div class="row justify-content-center">
     <div class="col-6">
         <h1 class="text-center">Contact</h1>
-        <form action="" method="post">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Email address</label>
-                <input type="email" name="email" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Massage</label>
-                <textarea name="massage" class="form-control"></textarea>
-            </div>
+        <?php $form = \app\core\form\Form::begin('', 'post'); ?>
+            <?php echo $form->field($model, 'subject'); ?>
+            <?php echo $form->field($model, 'email'); ?>
+            <?php echo new TextareaField($model, 'message'); ?>
+
             <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+        <?php echo \app\core\form\Form::end(); ?>
     </div>
 </div>
