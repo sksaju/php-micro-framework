@@ -26,6 +26,7 @@
                     <a class="p-2 text-dark" href="/register">Register</a>
                     <a class="btn btn-outline-primary" href="/login">Login</a>
                 <?php } else { ?>
+                    <a class="p-2 text-dark" href="/profile">Profile</a>
                     | Welcome, <?php echo Application::$app->user->getDisplayName(); ?>
                     <a class="btn btn-primary" href="/logout">Logout</a>
                 <?php } ?>
