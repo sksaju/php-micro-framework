@@ -1,5 +1,5 @@
 <?php
-    use app\core\Application;
+    use sksaju\phpmvc\Application;
 ?>
 
 <!doctype html>
@@ -35,7 +35,7 @@
 
         <div class="container">
             <?php  
-                $flash_message = \app\core\Application::$app->session->getFlash('success');
+                $flash_message = \sksaju\phpmvc\Application::$app->session->getFlash('success');
                 if ($flash_message) : ?>
                     <div class="alert alert-success">
                         <?php echo $flash_message; ?>

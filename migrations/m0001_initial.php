@@ -1,6 +1,6 @@
 <?php
 
-use app\core\Application;
+use sksaju\phpmvc\Application;
 
 /**  
  * Class m0001_initial 

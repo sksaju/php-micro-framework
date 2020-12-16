@@ -1,6 +1,6 @@
 <?php
 
-use app\core\Application;
+use sksaju\phpmvc\Application;
 
 /**  
  * Class m0002_add_password_column 

@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\core\UserModel;
+use sksaju\phpmvc\UserModel;
 
 /**  
  * Class User 

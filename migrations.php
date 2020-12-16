@@ -1,7 +1,7 @@
 <?php 
 /** User: SkSaju ...*/
 
-use app\core\Application;
+use sksaju\phpmvc\Application;
 
 require_once __DIR__."./vendor/autoload.php";
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);

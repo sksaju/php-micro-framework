@@ -1,7 +1,7 @@
 <?php 
 /** User: SkSaju ...*/
 
-use app\core\Application;
+use sksaju\phpmvc\Application;
 use app\controllers\SiteController;
 use app\controllers\AuthController;
 

@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\core\Model;
+use sksaju\phpmvc\Model;
 
 /**  
  * Class LoginForm 

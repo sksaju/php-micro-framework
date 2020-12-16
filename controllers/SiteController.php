@@ -2,9 +2,9 @@
 
 namespace app\controllers;
 
-use app\core\Application;
-use app\core\Request;
-use app\core\Response;
+use sksaju\phpmvc\Application;
+use sksaju\phpmvc\Request;
+use sksaju\phpmvc\Response;
 use app\models\ContactForm;
 
 /**  
@@ -36,7 +36,7 @@ class SiteController extends Controller
                 return;
             }
         }
-        
+
         return $this->render('contact', [
             'model' => $contact,
         ]);

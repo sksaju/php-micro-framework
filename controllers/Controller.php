@@ -2,8 +2,8 @@
 
 namespace app\controllers;
 
-use app\core\Application;
-use app\core\middlewares\BaseMiddleware;
+use sksaju\phpmvc\Application;
+use sksaju\phpmvc\middlewares\BaseMiddleware;
 
 /**  
  * Class Controller 
@@ -18,7 +18,7 @@ class Controller
     public string $action = '';
 
     /**
-     * @var app\core\middlewares\BaseMiddleware[]
+     * @var sksaju\phpmvc\middlewares\BaseMiddleware[]
      */
     protected array $middlewares = [];
 
@@ -38,7 +38,7 @@ class Controller
     }
 
     /**
-     * @return app\core\middlewares\BaseMiddleware[]
+     * @return sksaju\phpmvc\middlewares\BaseMiddleware[]
      */
     public function getMiddlewares(): array
     {

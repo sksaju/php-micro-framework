@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use app\core\Application;
-use app\core\middlewares\AuthMiddleware;
-use app\core\Request;
-use app\core\Response;
+use sksaju\phpmvc\Application;
+use sksaju\phpmvc\middlewares\AuthMiddleware;
+use sksaju\phpmvc\Request;
+use sksaju\phpmvc\Response;
 use app\models\LoginForm;
 use app\models\User;
 

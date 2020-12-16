@@ -1,6 +1,6 @@
 <?php
     /**
-     * @var $this \app\core\View
+     * @var $this \sksaju\phpmvc\View
      */
 
     $this->title = 'Profile';

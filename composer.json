@@ -12,6 +12,7 @@
         }
     },
     "require": {
-        "vlucas/phpdotenv": "^5.2"
+        "vlucas/phpdotenv": "^5.2",
+        "sksaju/php-micro-framework-core": "^1.0"
     }
 }
